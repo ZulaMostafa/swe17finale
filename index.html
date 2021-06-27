@@ -1,0 +1,82 @@
+<!Doctype html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Final Exam</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+
+        var end = new Date('06/28/2021 03:00 PM');
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        let timer = setInterval(function () {
+
+            var now = new Date();
+            var distance = end - now;
+            if (distance <= 0) {
+                document.getElementById('fff').innerHTML = 'DONE!';
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            // display
+            document.getElementById("timer").innerHTML =
+                "<div class=\"days\"> \
+  <div class=\"numbers\">" + days + "</div>days</div> \
+<div class=\"hours\"> \
+  <div class=\"numbers\">" + hours + "</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+</div>";
+
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="balloon white">
+            <div class="star-red"></div>
+            <div class="face">
+                <div class="eye"></div>
+                <div class="mouth happy"></div>
+            </div>
+            <div class="triangle"></div>
+            <div class="string"></div>
+        </div>
+
+        <div class="balloon red">
+            <div class="star"></div>
+            <div class="face">
+                <div class="eye"></div>
+                <div class="mouth happy"></div>
+            </div>
+            <div class="triangle"></div>
+            <div class="string"></div>
+        </div>
+
+        <div class="balloon blue">
+            <div class="star"></div>
+            <div class="face">
+                <div class="eye"></div>
+                <div class="mouth happy"></div>
+            </div>
+            <div class="triangle"></div>
+            <div class="string"></div>
+        </div>
+        <div id="timer"></div>
+        <h1 id="fff">Software Eng FCIS ASU '17 Final Exam ♡</h1>
+    </div>
+</body>
+
+</html>
